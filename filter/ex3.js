@@ -22,9 +22,32 @@ Sortie attendue:
   ['Bran Stark', 'Arya Stark', 'Sansa Stark']
 
  */
-
+// solution with endsWith
+// function keepStarks(names) {
+//   const familleStark = names.filter(name=>{
+//     if(name.endsWith('Stark')){
+//         return name;
+//     }
+//   });
+//   return familleStark;
+// }
+//solution with split
 function keepStarks(names) {
+  const familleStark = names.filter(name => {
+    const n = name.split(' ');
+    if(n[1] === 'Stark'){
+      return name;
+    }
+  });
+  return familleStark;
 }
-
+console.log(keepStarks([
+  'Bran Stark',
+  'Cersei Lannister',
+  'Sandor Clegane',
+  'Arya Stark',
+  'Yara Greyjoy',
+  'Sansa Stark'
+]));
 // Ne pas modifier l'export
 module.exports = keepStarks;
