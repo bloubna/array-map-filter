@@ -73,11 +73,6 @@ function getStudentsPerCurriculum(campuses, curriculumName) {
  }
    
 
-
-
-
-
-
 console.log(getStudentsPerCurriculum([{
     city: 'Bordeaux',
     curriculums: [{
