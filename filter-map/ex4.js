@@ -64,8 +64,56 @@ En prenant les deux exemples d'arguments d'entrée, on obtiendrait ceci en sorti
 */
 
 function getActivitiesMembers(activities, persons) {
+const results = activities.map(activ => {
+     let pratiquants = persons.filter(per => per.activities.includes(activ));
+     return {
+       activity : activ,
+       persons : pratiquants.map(p=> p.name)
+     }
+});
+return results;
 }
-
+console.log(getActivitiesMembers(['Badminton', 'Tennis', 'Volley-ball', 'Base-ball', 'Soccer', 'Basket-ball', 'Cycling'], [{
+    name: 'Jay Fox',
+    activities: ['Badminton']
+  },
+  {
+    name: 'Jenson Gardner',
+    activities: ['Badminton', 'Tennis']
+  },
+  {
+    name: 'Max Dean',
+    activities: ['Base-ball', 'Soccer']
+  },
+  {
+    name: 'Cody May',
+    activities: ['Basket-ball', 'Base-ball']
+  },
+  {
+    name: 'Nicholas Knight',
+    activities: ['Base-ball', 'Volley-ball']
+  },
+  {
+    name: 'Fletcher Estes',
+    activities: ['Basket-ball']
+  },
+  {
+    name: 'Jaydon Gallagher',
+    activities: ['Badminton', 'Basket-ball']
+  },
+  {
+    name: 'Efrain Rollins',
+    activities: ['Volley-ball', 'Tennis']
+  },
+  {
+    name: 'Tripp Cash',
+    activities: ['Badminton']
+  },
+  {
+    name: 'Ross Howard',
+    activities: ['Cycling']
+  }
+]));
 
 
 // Ne pas modifier l'export
